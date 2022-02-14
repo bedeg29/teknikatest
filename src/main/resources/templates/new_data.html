@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: html_head(pageTitle='Create New Data')" />
+<body>
+<div th:replace="fragments :: header"></div>
+<div align="center">
+    <h1>Create New Data</h1>
+    <br/>
+    <form action="#" th:action="@{/save}" th:object="${data}" method="post">
+        <table border="0" cellpadding="10">
+
+            <tr>
+                <td>Provider:</td>
+                <td>
+                    <input id="randomhp"value="Telkomsel"  list="operators" name="operator" th:field="*{brand}" class="form-control">
+                    <datalist id="operators" >
+                        <option value="Telkomsel">
+                        <option value="XL">
+                        <option value="Tri">
+                        <option value="Smartfren">
+                        <option value="Indosat">
+                    </datalist>
+                </td>
+            </tr>
+            <tr>
+                <td>No Handphone:</td>
+                <td><input id="randomfield" type="text" th:field="*{handphone}" required class="form-control" /></td>
+            </tr>
+
+
+            <tr>
+                <th ><button type="submit" class="btn btn-primary" >Save</button></th>
+                <th ><button type="submit" class="btn btn-primary" onclick="genPassword()">auto</button></th>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script>
+    var password=document.getElementById("randomfield");
+    // var down=document.getElementById("random");
+    function genPassword() {
+        var chars = "0123456789";
+        var passwordLength = 12;
+        var password = "";
+
+        for (var i = 0; i <= passwordLength; i++) {
+            var randomNumber = Math.floor(Math.random() * chars.length);
+            password += chars.substring(randomNumber, randomNumber +1);
+        }
+        function RandArray(array){
+            var rand = Math.random()*array.length | 0;
+            var rValue = array[rand];
+            return rValue;
+        }
+        var myArray = ['Telkomsel', 'XL', 'Indosat', 'Tri', 'Smartfren'];
+        var rValue = RandArray(myArray);
+        document.getElementById("randomhp").value=rValue;
+        document.getElementById("randomfield").value = password;
+
+    }
+
+</script>
+</body>
+</html>

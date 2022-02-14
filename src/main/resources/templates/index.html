@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head th:replace="fragments :: html_head(pageTitle='Teknikal Test - Home')" >
+
+</head>
+<body>
+<div class="container text-center">
+	<div><h1>Teknikal Test</h1></div>
+	<div>
+		<br/>
+		<h4><a th:href="@{/list}">View all datas</a></h4>
+		<br/>
+		<h4><a th:href="@{/new}">Create a New Data</a></h4>
+		<br/>
+	</div>
+</div>
+</body>
+</html>

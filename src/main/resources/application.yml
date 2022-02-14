@@ -1,0 +1,26 @@
+spring:
+  thymeleaf:
+  cache: false
+  datasource:
+    password:
+    url: jdbc:mysql://localhost:3306/sales
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 218345956644-nb5nq2qpt442lif3um5g3djcupit6lh7.apps.googleusercontent.com
+            clientSecret: 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
+            scope:
+              - email
+              - profile
