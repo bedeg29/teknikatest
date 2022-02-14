@@ -1,7 +1,8 @@
 # teknikatest
-java spring oaut2 mysql 
+java spring-boot oaut2 mysql 
 
-clone proyek ini via eclipse atau intellij idea
+clone proyek ini via eclipse Open Eclipse and choose Import Projects from Git (with smart import) atau intellij idea new project from versin control 
+paste url 
 tunggu mvn selesai download
 
 build run
