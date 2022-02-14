@@ -62,7 +62,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .usernameParameter("email")
                 .passwordParameter("pass")
-                .defaultSuccessUrl("/list")
+                .defaultSuccessUrl("/output")
                 .and()
                 .oauth2Login()
                 .loginPage("/login")
@@ -80,7 +80,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                         userService.processOAuthPostLogin(oauthUser.getEmail());
 
-                        response.sendRedirect("/list");
+                        response.sendRedirect("/output");
                     }
                 })
                 //.defaultSuccessUrl("/list")

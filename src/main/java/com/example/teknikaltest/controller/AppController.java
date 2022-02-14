@@ -19,7 +19,7 @@ import java.util.List;
 public class AppController {
     @Autowired
     private DataService service;
-    @RequestMapping("/list")
+    @RequestMapping("/output")
     public String viewHomepage(Model model){
         List<Data> listDatas = service.getDataByPrice();
         List<Data>listDataGanjil = service.getDataByPriceGanjil();
@@ -37,7 +37,7 @@ public class AppController {
 //        return "data";
 //    }
 
-    @RequestMapping("/new")
+    @RequestMapping("/input")
     public String showNewDataForm(Model model) {
         Data data = new Data();
         model.addAttribute("data", data);
@@ -49,7 +49,7 @@ public class AppController {
     public String saveData(@ModelAttribute("data") Data data) {
         service.save(data);
 
-        return "redirect:/list";
+        return "redirect:/output";
     }
 
     @RequestMapping("/edit/{id}")
@@ -66,6 +66,6 @@ public class AppController {
     public String deleteData(@PathVariable(name = "id") Long id) {
         service.delete(id);
 
-        return "redirect:/list";
+        return "redirect:/outut";
     }
 }
